@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Dias</title>
+    <script src="https://kit.fontawesome.com/2c3cae6005.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,500;1,300&family=Quicksand&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/styles.css">
+    <script src="./src/app.js" defer></script>
+    <script src="./src/getDate.js" defer></script>
+</head>
+<body>
+    <!--
+        Nesse projeto usei o Javascript puro. 
+        Tentei organizar melhor as funções e cada uma função fazendo um papel.
+        Antes eu fazia uma função gigante ao ponto de ter que fazer comentários, e diz o ditado
+        "Se você tem que descrever uma função é porquê não é uma boa função"
+
+        Ao final, estilizei com um css bem simples e algumas animações no relógio.
+        Acredito que um usuário acharia agradável a utilização desse app.
+
+    -->
+    <section id="examples">
+        <p>Clique para mudar a data e ver a diferença de dias.</p>
+        <article onclick="examples('1926-04-21' , 1)">            
+            <h2>Rainha Elizabeth II</h2>
+        </article>
+        <article onclick="examples('2001-09-11' , 2)">            
+            <h2>Atentado 11 de setembro</h2>
+        </article>
+        <article onclick="examples('1958-08-29' , 3)">            
+            <h2>Michael Jackson</h2>
+        </article>
+        <article onclick="examples('1945-09-02' , 4)">            
+            <h2>Fim da segunda guerra mundial</h2>
+        </article>
+        <article onclick="examples('1985-02-05' , 5)">            
+            <h2>Cristiano Ronaldo</h2>
+        </article>
+        <article onclick="examples('1995-09-04' , 6)">            
+            <h2>Criação do Javascript</h2>
+        </article>
+        <article onclick="examples('1957-01-01' , 7)">            
+            <h2>Fortran - A linguagem mais antiga em uso</h2>
+        </article>
+        <article onclick="examples('1969-10-29' , 8)">            
+            <h2>Arpanet - Primeira mensagem enviada</h2>
+        </article>
+        <article onclick="examples('0001-01-01' , 9)">            
+            <h2>Big Bang (Aproximado)</h2>
+        </article>
+    </section>
+
+    <section class="wrapper">
+        <div class="form-container">
+            <form action="#">
+                <h2>Contador de dias</h2>
+                <h2 id="clock" class="fa-regular fa-clock fa-beat" onclick="stopClock(this)"></h2>
+                <div class="form-group">
+                    <input id="inputPast" type="date" onfocus="datePastON()" onblur="datePastOFF()" value="2000-01-01" required>
+                    <p for="">Digite uma data inicial</p>
+                </div>
+                <div class="form-group">
+                    <input id="inputFuture" type="date" onfocus="dateFowardON()" onblur="dateFowardOFF()" value="2001-12-31" required>
+                    <p for="">Digite uma data final</p>
+                </div>
+                <div class="forgot-pass">
+                    <a onclick="today()" href="#">Clique aqui para a data de HOJE</a>
+                </div>
+                <button onclick="countDays()" class="btn">Contar</button>
+                <p id="result" class="hidden"> Você tem X dias de vida.</p>
+                <a id="linkedin" class="hidden" href="https://www.linkedin.com/in/allan-santos-400440238/">Obrigado por usar!</a>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
